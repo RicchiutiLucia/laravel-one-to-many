@@ -10,6 +10,7 @@
             
             <div class="card-body">
               <p class="card-text fw-bold"><span> Titolo:</span> <br>{{$project->title}}</p>
+              <p class="card-text"><span class="fw-bold">Categoria:</span> <br>{{$project->type?$project->type->name:'Nessuna Categoria abbinata'}}</p>
               <p class="card-text"><span class="fw-bold">Descrizione:</span> <br>{{$project->description}}</p>
             </div>
             <div>
