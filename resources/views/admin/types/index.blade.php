@@ -6,7 +6,7 @@
         <table class="table table-hover table-striped table-bordered ">
             <thead>
             <tr>
-                
+                <th scope="col">Id</th>
                 <th scope="col">Nome</th>
                 <th scope="col">Slug</th>
                 <th scope="col">Numero dei tipi</th>
