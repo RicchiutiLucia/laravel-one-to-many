@@ -49,6 +49,25 @@
                             <p class="text-success">Campo inserito correttamente!</p>
                         @endif
                     </div>
+                    <div class="mb-3">
+                        <label for="type_id" class="form-label">Seleziona tipo:</label>
+                        <select class="form-select @error('type_id') is-invalid @enderror" name="type_id" id="type_id">
+                            <option @selected(old('type_id', $project->type_id)=='') value="">Nessun tipo</option>
+                            @foreach ($types as $type )
+                                <option @selected(old('type_id', $project->type_id)==$type->id) value="{{$type->id}}">{{$type->name}}</option>   
+                            @endforeach
+                        </select>
+                        
+                        @if ($errors->has('type_id'))
+                            @error('type_id')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        @elseif ($errors->any() && old('type_id'))
+                            <p class="text-success">Campo inserito correttamente!</p>
+                        @endif
+                    </div>
 
                     <button type="submit" class="btn btn-primary my-4">Modifica progetto</button>
 
